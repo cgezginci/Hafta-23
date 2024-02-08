@@ -1,8 +1,7 @@
-# React + Vite
+Yıldız gemisi filtreleyebildiğimiz, detaylarını gördüğümüz ve ekleme yapabildiğimiz react projesi.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ 
+![Ekran Görüntüsü (100)](https://github.com/cgezginci/Hafta-23/assets/143842154/1242878a-e1ed-4136-8d61-b5810c02a8c2)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Ekran Görüntüsü (101)](https://github.com/cgezginci/Hafta-23/assets/143842154/ea5203dd-5b23-4d0d-a8ad-769c29874c07)
