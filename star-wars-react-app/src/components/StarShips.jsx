@@ -6,6 +6,15 @@ function StarShips() {
   const [filteredStarShips, setFilteredStarShips] = useState("");
   const [selectedShip, setSelectedShip] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
+  const [newShipData, setNewShipData] = useState({
+    name: "",
+    model: "",
+    hyperdrive_rating: "",
+    manufacturer: "",
+    length: "",
+    max_atmosphering_speed: "",
+    crew: "",
+  });
 
   const filtered = starShips.filter((starShip) => {
     return (
@@ -32,6 +41,37 @@ function StarShips() {
   const handleCloseDetails = () => {
     setSelectedShip(null);
     setIsVisible(true);
+  };
+
+  const handleAddShip = () => {
+    // Yeni gemi objesini oluştur
+    const newShip = {
+      name: newShipData.name || "Unknown",
+      model: newShipData.model || "Unknown",
+      hyperdrive_rating: newShipData.hyperdrive_rating || "Unknown",
+      manufacturer: newShipData.manufacturer || "Unknown",
+      length: newShipData.length || "Unknown",
+      max_atmosphering_speed: newShipData.max_atmosphering_speed || "Unknown",
+      crew: newShipData.crew || "Unknown",
+    };
+
+    // Yeni uzay gemisini ekleyerek state'i güncelle
+    setStarShips((prevShips) => [...prevShips, newShip]);
+    // Yeni gemi verilerini sıfırla
+    setNewShipData({
+      name: "",
+      model: "",
+      hyperdrive_rating: "",
+      manufacturer: "",
+      length: "",
+      max_atmosphering_speed: "",
+      crew: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewShipData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   return (
@@ -105,6 +145,66 @@ function StarShips() {
               Close
             </button>
           </div>
+        </div>
+      )}
+
+      <hr />
+
+      {isVisible && (
+        <div className="add-ship-form">
+          <h2>Add New Ship</h2>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={newShipData.name}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="model"
+            placeholder="Model"
+            value={newShipData.model}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="hyperdrive_rating"
+            placeholder="Hyperdrive Rating"
+            value={newShipData.hyperdrive_rating}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="manufacturer"
+            placeholder="Manufacturer"
+            value={newShipData.manufacturer}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="length"
+            placeholder="Length"
+            value={newShipData.length}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="max_atmosphering_speed"
+            placeholder="Max Atmosphering Speed"
+            value={newShipData.max_atmosphering_speed}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="crew"
+            placeholder="Crew"
+            value={newShipData.crew}
+            onChange={handleChange}
+          />
+          <button className="add-ship" onClick={handleAddShip}>
+            Add Ship
+          </button>
         </div>
       )}
     </div>
