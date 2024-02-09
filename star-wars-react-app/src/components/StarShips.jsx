@@ -44,7 +44,6 @@ function StarShips() {
   };
 
   const handleAddShip = () => {
-    // Yeni gemi objesini oluştur
     const newShip = {
       name: newShipData.name || "Unknown",
       model: newShipData.model || "Unknown",
@@ -55,9 +54,8 @@ function StarShips() {
       crew: newShipData.crew || "Unknown",
     };
 
-    // Yeni uzay gemisini ekleyerek state'i güncelle
     setStarShips((prevShips) => [...prevShips, newShip]);
-    // Yeni gemi verilerini sıfırla
+
     setNewShipData({
       name: "",
       model: "",
